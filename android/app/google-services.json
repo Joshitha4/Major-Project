@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "946430871614",
+    "project_id": "easypay-9bdd5",
+    "storage_bucket": "easypay-9bdd5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:946430871614:android:9ea14963153f33c50ba96f",
+        "android_client_info": {
+          "package_name": "com.example.easy_pay_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "946430871614-u6alq698vf5su42anl3g0qj33eklcfic.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNnSFiNWuX-qyX18PwsZ4xFaMMY6S3sQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "946430871614-u6alq698vf5su42anl3g0qj33eklcfic.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

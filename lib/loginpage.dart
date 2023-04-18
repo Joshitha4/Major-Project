@@ -1,3 +1,4 @@
+import 'package:easy_pay_app/user_info.dart';
 import 'package:flutter/material.dart';
 import 'signup.dart';
 import 'dart:io';
@@ -10,7 +11,7 @@ import 'homepage.dart';
 
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  const LoginPage();
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +34,7 @@ class LoginPage extends StatelessWidget {
         child: Column(
             children: [
               Container(
+                padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
                 child: Text("Are you a new user?"),
               ),
               Container(
