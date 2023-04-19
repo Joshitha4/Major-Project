@@ -11,6 +11,7 @@ class TransactionsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Transaction Details'),
+        automaticallyImplyLeading: false,
       ),
       body: Center(
         child: Column(

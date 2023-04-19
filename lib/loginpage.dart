@@ -27,6 +27,7 @@ class LoginPage extends StatelessWidget {
             color: Colors.blue[900],
           ),
         ),
+        automaticallyImplyLeading: false,
       ),
       body: Container(
         alignment: Alignment.topCenter, //inner widget alignment to center

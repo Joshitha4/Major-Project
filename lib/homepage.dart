@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'qrscanner.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,6 +10,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home page'),
+        automaticallyImplyLeading: false,
       ),
       body: Center(
         child: ElevatedButton(

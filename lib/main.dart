@@ -30,7 +30,6 @@ import 'loginpage.dart';
 import 'user_info.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp();
@@ -46,7 +45,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: LoginPage(),
+      home: const LoginPage(),
     );
   }
 }

@@ -11,6 +11,7 @@ class TransactionFailed extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Transaction Failed'),
+        automaticallyImplyLeading: false,
       ),
       body: Center(
         child: Column(
