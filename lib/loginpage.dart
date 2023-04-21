@@ -40,26 +40,44 @@ class LoginPage extends StatelessWidget {
               ),
               Container(
                 margin: EdgeInsets.only(top: 30),
-                child: ElevatedButton( //button to start scanning
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue[400],
+                  ),
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => SignupPage()),
                     );
                   },
-                  child: Text("Yes"),
+                  child: Text(
+                      "Yes",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      )
+                  ),
                 ),
               ),
               Container(
                 margin: EdgeInsets.only(top: 30),
-                child: ElevatedButton( //button to start scanning
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue[400],
+                  ),
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const Home()),
                     );
                   },
-                  child: Text("No"),
+                  child: Text(
+                      "No",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      )
+                  ),
                 ),
               )
             ]
@@ -94,7 +112,9 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(    //The random white page that appears
-
+      body: Center(
+        child: Image.asset('assets/easypaylogo.png', fit: BoxFit.cover)
+      )
     );
   }
 
@@ -109,7 +129,7 @@ class _HomeState extends State<Home> {
             options: const AuthenticationOptions(biometricOnly: true, stickyAuth: true),
             authMessages: const <AuthMessages>[
               AndroidAuthMessages(
-                signInTitle: 'Unlock Ideal Group',
+                signInTitle: 'Unlock',
                 cancelButton: 'No thanks',
               ),
               IOSAuthMessages(

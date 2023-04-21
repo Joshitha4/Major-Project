@@ -1,3 +1,4 @@
+import 'package:easy_pay_app/homepage.dart';
 import 'package:easy_pay_app/loginpage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -63,6 +64,7 @@ class _SignupPageState extends State<SignupPage> {
             color: Colors.blue[900],
           ),
         ),
+        automaticallyImplyLeading: false,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -82,7 +84,7 @@ class _SignupPageState extends State<SignupPage> {
                 ),
                 keyboardType: TextInputType.name,
                 style: TextStyle(
-                    color: Colors.deepOrange
+                    color: Colors.black87
                 ),
               ),
               SizedBox(height: 30.0,),
@@ -97,7 +99,7 @@ class _SignupPageState extends State<SignupPage> {
                 ),
                 keyboardType: TextInputType.emailAddress,
                 style: TextStyle(
-                    color: Colors.deepOrange
+                    color: Colors.black87
                 ),
               ),
               SizedBox(height: 30.0,),
@@ -112,7 +114,7 @@ class _SignupPageState extends State<SignupPage> {
                 ),
                 keyboardType: TextInputType.phone,
                 style: TextStyle(
-                    color: Colors.deepOrange
+                    color: Colors.black87
                 ),
               ),
               SizedBox(height: 30.0,),
@@ -192,9 +194,10 @@ class _SignupPageState extends State<SignupPage> {
                           authentication: _auth_methods
                       );
                       await userRepo.createUser(user);
+
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const LoginPage()),
+                        MaterialPageRoute(builder: (context) => const Home()),
                       );
 
                     },

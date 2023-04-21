@@ -5,6 +5,8 @@ import 'loginpage.dart';
 import 'authentication_page.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+
+String _amount = "";
 class CamScanner extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
@@ -13,7 +15,7 @@ class CamScanner extends StatefulWidget{
 }
 
 class _CamScanner extends State<CamScanner>{
-  String? scanresult = ''; //varaible for scan result text
+  String? scanresult = ''; //variable for scan result text
 
   @override
   void initState() {
@@ -38,15 +40,51 @@ class _CamScanner extends State<CamScanner>{
               ),
               Container(
                 margin: EdgeInsets.only(top:30),
-                child: (scanresult != "none" && scanresult != null && scanresult != "null")?ElevatedButton(
-                  onPressed: (){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const Auth()),
-                    );
-                  } ,
-                  child: Text("Proceed with Payment?"),
-                ):ElevatedButton( //button to start scanning
+                child: (scanresult != "none" && scanresult != null && scanresult != "null")?Container(
+                  child: (scanresult == "Enter Amount to be Paid")?Column(
+                    children: [
+                        TextField(
+                          onChanged: (val) {
+                          _amount = val;
+                          },
+                          obscureText: false,
+                          decoration: InputDecoration(
+                          hintText: 'Enter Amount',
+                          ),
+                          keyboardType: TextInputType.number,
+                          style: TextStyle(
+                          color: Colors.black87
+                          ),
+                        ),
+                        ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.redAccent,
+                            ),
+                            onPressed: (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => const Auth()),
+                              );
+                            } ,
+                            child: Text("Proceed with Payment")
+                        )
+                    ]
+                  ):ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.redAccent,
+                    ),
+                      onPressed: (){
+                        Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Auth()),
+                        );
+                        } ,
+                      child: Text("Proceed with Payment")
+                    )
+                  ) :ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.redAccent,
+                    ),//button to start scanning
                     onPressed: () async {
                       if (await Permission.camera.request().isGranted) {
                         scanresult = await scanner.scan();

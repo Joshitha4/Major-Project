@@ -1,28 +1,5 @@
-// import 'package:flutter/material.dart';
-// import 'package:local_auth/local_auth.dart';
-//
-// import 'authentication.dart';
-//
-// void main()=> runApp(MyApp());
-//
-// class MyApp extends StatelessWidget {
-//   const MyApp({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       title: "Fingerprint Auth",
-//       home: FingerprintAuth(),
-//     );
-//   }
-// }
 
-
-
-
-
-
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -33,21 +10,46 @@ import 'package:firebase_core/firebase_core.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp();
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Splash Screen',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(),
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.system,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: const LoginPage(),
     );
   }
 }
 
-
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 3),
+            ()=>Navigator.pushReplacement(context,
+            MaterialPageRoute(builder:
+                (context) =>
+                LoginPage()
+            )
+        )
+    );
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        color: Colors.white,
+        child:Image.asset('assets/easypaylogo.png')
+        // child:FlutterLogo(size:MediaQuery.of(context).size.height)
+    );
+  }
+}

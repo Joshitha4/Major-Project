@@ -48,11 +48,11 @@ class _AuthState extends State<Auth> {
 
       if (availableBiometrics!.contains(BiometricType.strong) || availableBiometrics!.contains(BiometricType.fingerprint)) {
         final bool didAuthenticate = await auth!.authenticate(
-            localizedReason: 'Unlock your screen with PIN, pattern, password, face, or fingerprint',
+            localizedReason: 'Please authenticate yourself with face, or fingerprint',
             options: const AuthenticationOptions(biometricOnly: true, stickyAuth: true),
             authMessages: const <AuthMessages>[
               AndroidAuthMessages(
-                signInTitle: 'Unlock Ideal Group',
+                signInTitle: 'Proceed with payment',
                 cancelButton: 'No thanks',
               ),
               IOSAuthMessages(
@@ -73,11 +73,11 @@ class _AuthState extends State<Auth> {
         }
       } else if (availableBiometrics!.contains(BiometricType.weak) || availableBiometrics!.contains(BiometricType.face)) {
         final bool didAuthenticate = await auth!.authenticate(
-            localizedReason: 'Unlock your screen with PIN, pattern, password, face, or fingerprint',
+            localizedReason: 'Authenticate yourself with face, or fingerprint',
             options: const AuthenticationOptions(stickyAuth: true),
             authMessages: const <AuthMessages>[
               AndroidAuthMessages(
-                signInTitle: 'Unlock Ideal Group',
+                signInTitle: 'Proceed with payment',
                 cancelButton: 'No thanks',
               ),
               IOSAuthMessages(
